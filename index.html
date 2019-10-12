@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CheckMate</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="script.js" type="text/javascript"></script>
+        <link rel="icon" type="image/png" href="images/" sizes="512x512">
+    </head>
+    <body>
+        <nav>
+
+        </nav>
+        <main>
+            <table id="chessboard">
+                <tr>
+                    <th id="row-8">
+                        <h1>8</h1>
+                    </th>
+                    <td id="cell-A8" class="white-space">
+                        <img id="rook-b-1" src="images/pieces/rook_b.png" alt="Black Rook">
+                    </td>
+                    <td id="cell-B8" class="black-space">
+                        <img id="knight-b-1" src="images/pieces/knight_b.png" alt="Black Knight">
+                    </td>
+                    <td id="cell-C8" class="white-space">
+                        <img id="bishop-b-1" src="images/pieces/bishop_b.png" alt="Black Bishop">
+                    </td>
+                    <td id="cell-D8" class="black-space">
+                        <img id="queen-b" src="images/pieces/queen_b.png" alt="Black Queen">
+                    </td>
+                    <td id="cell-E8" class="white-space">
+                        <img id="king-b" src="images/pieces/king_b.png" alt="Black King">
+                    </td>
+                    <td id="cell-F8" class="black-space">
+                        <img id="bishop-b-2" src="images/pieces/bishop_b.png" alt="Black Bishop">
+                    </td>
+                    <td id="cell-G8" class="white-space">
+                        <img id="knight-b-2" src="images/pieces/knight_b.png" alt="Black Knight">
+                    </td>
+                    <td id="cell-H8" class="black-space">
+                        <img id="rook-b-2" src="images/pieces/rook_b.png" alt="Black Rook">
+                    </td>
+                </tr> <!-- Row 8 -->
+                <tr>
+                    <th id="row-7">
+                        <h1>7</h1>
+                    </th>
+                    <td id="cell-A7" class="black-space">
+                        <img id="pawn-b-1" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-B7" class="white-space">
+                        <img id="pawn-b-2" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-C7" class="black-space">
+                        <img id="pawn-b-3" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-D7" class="white-space">
+                        <img id="pawn-b-4" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-E7" class="black-space">
+                        <img id="pawn-b-5" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-F7" class="white-space">
+                        <img id="pawn-b-6" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-G7" class="black-space">
+                        <img id="pawn-b-7" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                    <td id="cell-H7" class="white-space">
+                        <img id="pawn-b-8" src="images/pieces/pawn_b.png" alt="Black Pawn">
+                    </td>
+                </tr> <!-- Row 7 -->
+                <tr>
+                    <th id="row-6">
+                        <h1>6</h1>
+                    </th>
+                    <td id="cell-A6" class="white-space">
+
+                    </td>
+                    <td id="cell-B6" class="black-space">
+
+                    </td>
+                    <td id="cell-C6" class="white-space">
+
+                    </td>
+                    <td id="cell-D6" class="black-space">
+
+                    </td>
+                    <td id="cell-E6" class="white-space">
+
+                    </td>
+                    <td id="cell-F6" class="black-space">
+
+                    </td>
+                    <td id="cell-G6" class="white-space">
+
+                    </td>
+                    <td id="cell-H6" class="black-space">
+
+                    </td>
+                </tr> <!-- Row 6 -->
+                <tr>
+                    <th id="row-5">
+                        <h1>5</h1>
+                    </th>
+                    <td id="cell-A5" class="black-space">
+
+                    </td>
+                    <td id="cell-B5" class="white-space">
+
+                    </td>
+                    <td id="cell-C5" class="black-space">
+
+                    </td>
+                    <td id="cell-D5" class="white-space">
+
+                    </td>
+                    <td id="cell-E5" class="black-space">
+
+                    </td>
+                    <td id="cell-F5" class="white-space">
+
+                    </td>
+                    <td id="cell-G5" class="black-space">
+
+                    </td>
+                    <td id="cell-H5" class="white-space">
+
+                    </td>
+                </tr> <!-- Row 5 -->
+                <tr>
+                    <th id="row-4">
+                        <h1>4</h1>
+                    </th>
+                    <td id="cell-A4" class="white-space">
+
+                    </td>
+                    <td id="cell-B4" class="black-space">
+
+                    </td>
+                    <td id="cell-C4" class="white-space">
+
+                    </td>
+                    <td id="cell-D4" class="black-space">
+
+                    </td>
+                    <td id="cell-E4" class="white-space">
+
+                    </td>
+                    <td id="cell-F4" class="black-space">
+
+                    </td>
+                    <td id="cell-G4" class="white-space">
+
+                    </td>
+                    <td id="cell-H4" class="black-space">
+
+                    </td>
+                </tr> <!-- Row 4 -->
+                <tr>
+                    <th id="row-3">
+                        <h1>3</h1>
+                    </th>
+                    <td id="cell-A3" class="black-space">
+
+                    </td>
+                    <td id="cell-B3" class="white-space">
+
+                    </td>
+                    <td id="cell-C3" class="black-space">
+
+                    </td>
+                    <td id="cell-D3" class="white-space">
+
+                    </td>
+                    <td id="cell-E3" class="black-space">
+
+                    </td>
+                    <td id="cell-F3" class="white-space">
+
+                    </td>
+                    <td id="cell-G3" class="black-space">
+
+                    </td>
+                    <td id="cell-H3" class="white-space">
+
+                    </td>
+                </tr> <!-- Row 3 -->
+                <tr>
+                    <th id="row-2">
+                        <h1>2</h1>
+                    </th>
+                    <td id="cell-A2" class="white-space">
+                        <img id="pawn-w-1" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-B2" class="black-space">
+                        <img id="pawn-w-2" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-C2" class="white-space">
+                        <img id="pawn-w-3" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-D2" class="black-space">
+                        <img id="pawn-w-4" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-E2" class="white-space">
+                        <img id="pawn-w-5" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-F2" class="black-space">
+                        <img id="pawn-w-6" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-G2" class="white-space">
+                        <img id="pawn-w-7" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                    <td id="cell-H2" class="black-space">
+                        <img id="pawn-w-8" src="images/pieces/pawn_w.png" alt="White Pawn">
+                    </td>
+                </tr> <!-- Row 2 -->
+                <tr>
+                    <th id="row-1">
+                        <h1>1</h1>
+                    </th>
+                    <td id="cell-A1" class="black-space">
+                        <img id="rook-w-1" src="images/pieces/rook_w.png" alt="White Rook">
+                    </td>
+                    <td id="cell-B1" class="white-space">
+                        <img id="knight-w-1" src="images/pieces/knight_w.png" alt="White Knight">
+                    </td>
+                    <td id="cell-C1" class="black-space">
+                        <img id="bishop-w-1" src="images/pieces/bishop_w.png" alt="White Bishop">
+                    </td>
+                    <td id="cell-D1" class="white-space">
+                        <img id="queen-w" src="images/pieces/queen_w.png" alt="White Queen">
+                    </td>
+                    <td id="cell-E1" class="black-space">
+                        <img id="king-w" src="images/pieces/king_w.png" alt="White King">
+                    </td>
+                    <td id="cell-F1" class="white-space">
+                        <img id="bishop-w-2" src="images/pieces/bishop_w.png" alt="White Bishop">
+                    </td>
+                    <td id="cell-G1" class="black-space">
+                        <img id="knight-w-2" src="images/pieces/knight_w.png" alt="White Knight">
+                    </td>
+                    <td id="cell-H1" class="white-space">
+                        <img id="rook-w-2" src="images/pieces/rook_w.png" alt="White Rook">
+                    </td>
+                </tr> <!-- Row 1 -->
+                <tr>
+                    <td>
+
+                    </td>
+                    <th id="column-A">
+                        <h1>A</h1>
+                    </th>
+                    <th id="column-B">
+                        <h1>B</h1>
+                    </th>
+                    <th id="column-C">
+                        <h1>C</h1>
+                    </th>
+                    <th id="column-D">
+                        <h1>D</h1>
+                    </th>
+                    <th id="column-E">
+                        <h1>E</h1>
+                    </th>
+                    <th id="column-F">
+                        <h1>F</h1>
+                    </th>
+                    <th id="column-G">
+                        <h1>G</h1>
+                    </th>
+                    <th id="column-H">
+                        <h1>H</h1>
+                    </th>
+                </tr> <!-- Row 0 -->
+            </table>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

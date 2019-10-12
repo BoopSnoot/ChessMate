@@ -1,0 +1,33 @@
+.white-space {
+    background-color: white;
+}
+
+.black-space {
+    background-color: black;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#chessboard td {
+    padding: 0;
+    width: 100px;
+    height: 100px;
+}
+
+#chessboard {
+    margin: auto;
+}
+.cell-on-black {
+    background-color: gray;
+}
+
+.cell-on-white {
+    background-color: darkgray;
+}
+h1 {
+   font-family: sans-serif;
+ }
