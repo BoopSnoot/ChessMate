@@ -7,15 +7,14 @@
 }
 
 img {
-    width: 80px;
-    height: 80px;
+    max-width: 80px;
+    height: auto;
     cursor: pointer;
 }
 
-#chessboard td {
+#chessboard td,th {
+    max-height: 100px;
     padding: 0;
-    width: 80px;
-    height: 80px;
 }
 
 #chessboard {
