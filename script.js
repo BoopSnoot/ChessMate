@@ -144,6 +144,18 @@ function calculateMoves(pieceElement) {
         } else {
             console.log("black bishop");
         }
+
+        let currCell = cellParsed;
+        //go right up
+
+        while (true) {
+            currCell = [currCell[0] + 1, currCell[1] + 1];
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                moveList.push(currCell);
+            }
+            currCell = cellParsed;
+        }
+
     } else if (pieceElement.id.includes("queen")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white queen");
