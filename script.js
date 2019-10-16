@@ -105,6 +105,39 @@ function calculateMoves(pieceElement) {
         } else {
             console.log("black knight");
         }
+        let currCell = cellParsed;
+        //go right up
+        currCell = [currCell[0] + 2, currCell[1] + 1];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go right down
+        currCell = [currCell[0] + 2, currCell[1] - 1];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go down right
+        currCell = [currCell[0] + 1, currCell[1] - 2];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go down left
+        currCell = [currCell[0] - 1, currCell[1] - 2];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go left up
+        currCell = [currCell[0] - 2, currCell[1] + 1];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go left down
+        currCell = [currCell[0] - 2, currCell[1] - 1];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go up left
+        currCell = [currCell[0] - 1, currCell[1] + 2];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
+        //go up right
+        currCell = [currCell[0] + 1, currCell[1] + 2];
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
+        currCell = cellParsed;
     } else if (pieceElement.id.includes("bishop")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white bishop");
