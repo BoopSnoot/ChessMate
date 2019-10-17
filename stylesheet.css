@@ -13,6 +13,7 @@ img {
 }
 
 #chessboard td,th {
+    width: 80px;
     max-height: 100px;
     padding: 0;
 }

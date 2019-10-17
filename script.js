@@ -97,13 +97,14 @@ function calculateMoves(pieceElement) {
                     currCell = cellParsed;
                 }
             }
-            endOfBoard = false;
         }
-    } else if (pieceElement.id.includes("knight")) {
+    } //done
+    else if (pieceElement.id.includes("knight")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white knight");
         } else {
             console.log("black knight");
+
         }
         let currCell = cellParsed;
         //go right up
@@ -137,8 +138,8 @@ function calculateMoves(pieceElement) {
         //go up right
         currCell = [currCell[0] + 1, currCell[1] + 2];
         if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) { moveList.push(currCell); }
-        currCell = cellParsed;
-    } else if (pieceElement.id.includes("bishop")) {
+    } //done
+    else if (pieceElement.id.includes("bishop")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white bishop");
         } else {
@@ -146,29 +147,168 @@ function calculateMoves(pieceElement) {
         }
 
         let currCell = cellParsed;
-        //go right up
+        let endOfCell = false;
 
-        while (true) {
+        //go right up
+        while (!endOfCell) {
             currCell = [currCell[0] + 1, currCell[1] + 1];
             if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
                 moveList.push(currCell);
+            } else {
+                endOfCell = true;
             }
-            currCell = cellParsed;
+        }
+        endOfCell = false;
+        currCell = cellParsed;
+
+        //go left up
+        while (!endOfCell) {
+            currCell = [currCell[0] - 1, currCell[1] + 1];
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                moveList.push(currCell);
+            } else {
+                endOfCell = true;
+            }
+        }
+        endOfCell = false;
+        currCell = cellParsed;
+
+        //go right down
+        while (!endOfCell) {
+            currCell = [currCell[0] + 1, currCell[1] - 1];
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                moveList.push(currCell);
+            } else {
+                endOfCell = true;
+            }
+        }
+        endOfCell = false;
+        currCell = cellParsed;
+
+        //go left down
+        while (!endOfCell) {
+            currCell = [currCell[0] - 1, currCell[1] - 1];
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                moveList.push(currCell);
+            } else {
+                endOfCell = true;
+            }
         }
 
-    } else if (pieceElement.id.includes("queen")) {
+    } //done
+    else if (pieceElement.id.includes("queen")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white queen");
         } else {
             console.log("black queen");
         }
-    } else if (pieceElement.id.includes("king")) {
+
+        let currCell = cellParsed;
+
+        if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+            //go left
+            let endOfBoard = false;
+            while (!endOfBoard) {
+                currCell = [currCell[0] - 1, currCell[1]];
+                if (currCell[0] > 0) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                    currCell = cellParsed;
+                }
+            }
+            endOfBoard = false;
+            //go right
+            while (!endOfBoard) {
+                currCell = [currCell[0] + 1, currCell[1]];
+                if (currCell[0] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                    currCell = cellParsed;
+                }
+            }
+            endOfBoard = false;
+            //go up
+            while (!endOfBoard) {
+                currCell = [currCell[0] , currCell[1] + 1];
+                if (currCell[1] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                    currCell = cellParsed;
+                }
+            }
+            endOfBoard = false;
+            // go down
+            while (!endOfBoard) {
+                currCell = [currCell[0] , currCell[1] - 1];
+                if (currCell[1] > 0) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                    currCell = cellParsed;
+                }
+            }
+            endOfBoard = false;
+
+            //go right up
+            while (!endOfBoard) {
+                currCell = [currCell[0] + 1, currCell[1] + 1];
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                }
+            }
+            endOfBoard = false;
+            currCell = cellParsed;
+
+            //go left up
+            while (!endOfBoard) {
+                currCell = [currCell[0] - 1, currCell[1] + 1];
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                }
+            }
+            endOfBoard = false;
+            currCell = cellParsed;
+
+            //go right down
+            while (!endOfBoard) {
+                currCell = [currCell[0] + 1, currCell[1] - 1];
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                }
+            }
+            endOfBoard = false;
+            currCell = cellParsed;
+
+            //go left down
+            while (!endOfBoard) {
+                currCell = [currCell[0] - 1, currCell[1] - 1];
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                    moveList.push(currCell);
+                } else {
+                    endOfBoard = true;
+                }
+            }
+        }
+    } //done
+    else if (pieceElement.id.includes("king")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white king");
         } else {
             console.log("black king");
         }
-    } else if (pieceElement.id.includes("pawn")) {
+
+
+    }
+    else if (pieceElement.id.includes("pawn")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white pawn");
             if (cellParsed[1] + 1 < 9) {
