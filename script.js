@@ -307,7 +307,7 @@ function calculateMoves(pieceElement) {
         }
 
 
-    }
+    } //TODO: MOVE CALCULATION
     else if (pieceElement.id.includes("pawn")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white pawn");
@@ -326,8 +326,12 @@ function calculateMoves(pieceElement) {
                 }
             }
         }
-    }
+    } //done
     return moveList;
+}
+
+function collisionDetection(cellList) {
+    //TODO: MAKE COLLISION DETECTION
 }
 
 function parseCellID(cellID) {
@@ -360,6 +364,7 @@ function parseCellID(cellID) {
     }
     return cellParsed;
 }
+
 function unparseCellID(cellCoords) {
     let cellID;
     switch (cellCoords[0]) {
