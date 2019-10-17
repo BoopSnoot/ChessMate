@@ -25,6 +25,10 @@ img {
     background-color: gray;
 }
 
+.cell-on {
+    cursor: pointer;
+}
+
 .cell-on-white {
     background-color: darkgray;
 }
