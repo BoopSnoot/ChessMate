@@ -1,4 +1,5 @@
 document.addEventListener("click", mouseClickHandler);
+let selectPiece;
 
 function mouseClickHandler(e) {
     for (let element of document.querySelectorAll("#chessboard td")) {
@@ -16,19 +17,22 @@ function mouseClickHandler(e) {
             }
         }
     }
-    let isPiece = () => {
-        for (let element of document.document.querySelectorAll("#chessboard img")) {
-            if (element === e.target) return true;
+    function isPiece() {
+        let isPiece = false;
+        for (let element of document.querySelectorAll("#chessboard img")) {
+            if (element === e.target) isPiece = true;
         }
-        return false;
-    };
+        return isPiece
+    }
 
-    if (isPiece) {
-        let validMoves = calculateMoves(e.target);
+    if (isPiece()) {
+        selectPiece = e.target;
+        let validMoves = calculateMoves(e.target.parentElement);
 
         for (let cellCoords of validMoves) {
             let cellObject = document.getElementById(parseCellCoords(cellCoords));
             if (cellObject !== null) {
+                cellObject.classList.add("cell-on");
                 if (cellObject.classList.contains("black-space")) {
                     cellObject.classList.add("cell-on-black");
                 } else if (cellObject.classList.contains("white-space")) {
@@ -37,9 +41,12 @@ function mouseClickHandler(e) {
             }
         }
     }
+    else if (e.target.classList.contains("cell-on")) {
+        movePiece(selectPiece, e.target)
+    }
 }
 
-function calculateMoves(pieceElement) {
+function calculateMoves(cellElement) {
     function isInBoard(currCell) {
         return (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9);
     }
@@ -47,10 +54,12 @@ function calculateMoves(pieceElement) {
         return document.getElementById(parseCellCoords(currCell)).getElementsByTagName("img").length === 0;
     }
 
-    let cellElement = pieceElement.parentElement;
+    let pieceElement = cellElement.getElementsByTagName("img")[0];
     let cellParsed = parseCellID(cellElement.id);
-    console.log("Cell: " + cellParsed);
     let moveList = [];
+
+    console.log("Cell: " + cellParsed);
+
     // parse the pieces
     if (pieceElement.id.includes("rook")) {
         if (pieceElement.id.includes("-w")) {
@@ -355,7 +364,7 @@ function calculateMoves(pieceElement) {
                 }
             }
         }
-    }
+    } //TODO: Add collision detection
     return moveList;
 }
 
@@ -388,6 +397,12 @@ function parseCellID(cellID) {
             break;
     }
     return cellParsed;
+}
+
+function movePiece(piece, toCell) {
+    let pieceHTML = piece.parentElement.innerHTML;
+    piece.parentElement.innerHTML = "";
+    toCell.innerHTML = pieceHTML;
 }
 
 function parseCellCoords(cellCoords) {
