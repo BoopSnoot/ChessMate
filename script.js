@@ -105,7 +105,7 @@ function calculateMoves(pieceElement) {
                 }
             }
         }
-    } //done
+    }
     else if (pieceElement.id.includes("knight")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white knight");
@@ -146,7 +146,7 @@ function calculateMoves(pieceElement) {
         //go up right
         currCell = [currCell[0] + 1, currCell[1] + 2];
         if (isInBoard(currCell) && cellFree(currCell)) { moveList.push(currCell); }
-    } //done
+    }
     else if (pieceElement.id.includes("bishop")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white bishop");
@@ -155,55 +155,55 @@ function calculateMoves(pieceElement) {
         }
 
         let currCell = cellParsed;
-        let endOfCell = false;
+        let endOfMove = false;
 
         //go right up
-        while (!endOfCell) {
+        while (!endOfMove) {
             currCell = [currCell[0] + 1, currCell[1] + 1];
-            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                 moveList.push(currCell);
             } else {
-                endOfCell = true;
+                endOfMove = true;
             }
         }
-        endOfCell = false;
+        endOfMove = false;
         currCell = cellParsed;
 
         //go left up
-        while (!endOfCell) {
+        while (!endOfMove) {
             currCell = [currCell[0] - 1, currCell[1] + 1];
-            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                 moveList.push(currCell);
             } else {
-                endOfCell = true;
+                endOfMove = true;
             }
         }
-        endOfCell = false;
+        endOfMove = false;
         currCell = cellParsed;
 
         //go right down
-        while (!endOfCell) {
+        while (!endOfMove) {
             currCell = [currCell[0] + 1, currCell[1] - 1];
-            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                 moveList.push(currCell);
             } else {
-                endOfCell = true;
+                endOfMove = true;
             }
         }
-        endOfCell = false;
+        endOfMove = false;
         currCell = cellParsed;
 
         //go left down
-        while (!endOfCell) {
+        while (!endOfMove) {
             currCell = [currCell[0] - 1, currCell[1] - 1];
-            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+            if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                 moveList.push(currCell);
             } else {
-                endOfCell = true;
+                endOfMove = true;
             }
         }
 
-    } //done
+    }
     else if (pieceElement.id.includes("queen")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white queen");
@@ -215,98 +215,98 @@ function calculateMoves(pieceElement) {
 
         if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
             //go left
-            let endOfBoard = false;
-            while (!endOfBoard) {
+            let endOfMove = false;
+            while (!endOfMove) {
                 currCell = [currCell[0] - 1, currCell[1]];
-                if (currCell[0] > 0) {
+                if (currCell[0] > 0 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                     currCell = cellParsed;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             //go right
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] + 1, currCell[1]];
-                if (currCell[0] < 9) {
+                if (currCell[0] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                     currCell = cellParsed;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             //go up
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] , currCell[1] + 1];
-                if (currCell[1] < 9) {
+                if (currCell[1] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                     currCell = cellParsed;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             // go down
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] , currCell[1] - 1];
-                if (currCell[1] > 0) {
+                if (currCell[1] > 0 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                     currCell = cellParsed;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
 
             //go right up
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] + 1, currCell[1] + 1];
-                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             currCell = cellParsed;
 
             //go left up
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] - 1, currCell[1] + 1];
-                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             currCell = cellParsed;
 
             //go right down
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] + 1, currCell[1] - 1];
-                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                 }
             }
-            endOfBoard = false;
+            endOfMove = false;
             currCell = cellParsed;
 
             //go left down
-            while (!endOfBoard) {
+            while (!endOfMove) {
                 currCell = [currCell[0] - 1, currCell[1] - 1];
-                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9) {
+                if (currCell[0] > 0 && currCell[0] < 9 && currCell[1] > 0 && currCell[1] < 9 && cellFree(currCell)) {
                     moveList.push(currCell);
                 } else {
-                    endOfBoard = true;
+                    endOfMove = true;
                 }
             }
         }
-    } //done
+    }
     else if (pieceElement.id.includes("king")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white king");
@@ -321,22 +321,22 @@ function calculateMoves(pieceElement) {
         let goRight = (cellParsed[0] + 1) < 9;
 
         //probe all 8 ways
-        if (goDown) {
+        if (goDown && cellFree([cellParsed[0], cellParsed[1] - 1])) {
             moveList.push([cellParsed[0], cellParsed[1] - 1]);
-            if (goLeft) { moveList.push([cellParsed[0] - 1, cellParsed[1] - 1]) }
-            if (goRight) { moveList.push([cellParsed[0] + 1, cellParsed[1] - 1]) }
+            if (goLeft && cellFree([cellParsed[0] - 1, cellParsed[1] - 1])) { moveList.push([cellParsed[0] - 1, cellParsed[1] - 1]) }
+            if (goRight && cellFree([cellParsed[0] + 1, cellParsed[1] - 1])) { moveList.push([cellParsed[0] + 1, cellParsed[1] - 1]) }
         }
-        if (goRight) {
+        if (goRight && cellFree([cellParsed[0] + 1, cellParsed[1]])) {
             moveList.push([cellParsed[0] + 1, cellParsed[1]]);
-            if (goUp) { moveList.push([cellParsed[0] + 1, cellParsed[1] + 1]) }
+            if (goUp && cellFree([cellParsed[0] + 1, cellParsed[1] + 1])) { moveList.push([cellParsed[0] + 1, cellParsed[1] + 1]) }
         }
-        if (goUp) {
+        if (goUp && cellFree([cellParsed[0], cellParsed[1] + 1])) {
             moveList.push([cellParsed[0], cellParsed[1] + 1]);
-            if (goLeft) { moveList.push([cellParsed[0] - 1, cellParsed[1] + 1]) }
+            if (goLeft && cellFree([cellParsed[0] - 1, cellParsed[1] + 1])) { moveList.push([cellParsed[0] - 1, cellParsed[1] + 1]) }
         }
-        if (goLeft) { moveList.push([cellParsed[0] - 1, cellParsed[1]]); }
+        if (goLeft && cellFree([cellParsed[0] - 1, cellParsed[1]])) { moveList.push([cellParsed[0] - 1, cellParsed[1]]); }
 
-    } //done
+    }
     else if (pieceElement.id.includes("pawn")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white pawn");
@@ -355,9 +355,9 @@ function calculateMoves(pieceElement) {
                 }
             }
         }
-    } //done
+    }
     return moveList;
-} //done
+}
 
 function parseCellID(cellID) {
     let cellParsed;
