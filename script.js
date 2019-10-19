@@ -400,7 +400,7 @@ function movePiece(piece, toCell) {
     let pieceHTML = piece.parentElement.innerHTML;
     piece.parentElement.innerHTML = "";
     toCell.innerHTML = pieceHTML;
-    cleanUp("cell-on");
+    cleanUp("cell-on")
 }
 
 function parseCellCoords(cellCoords) {
