@@ -1,4 +1,4 @@
-//boof
+//boof la doof
 
 document.addEventListener("click", mouseClickHandler);
 let selectPiece;
