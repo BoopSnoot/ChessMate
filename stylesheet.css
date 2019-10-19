@@ -20,18 +20,15 @@ img {
 
 #chessboard {
     margin: auto;
-}
-.cell-on-black {
-    background-color: gray;
+    padding-top: 15px;
+    padding-right: 15px;
 }
 
 .cell-on {
     cursor: pointer;
+    background-color: #f44336;
 }
 
-.cell-on-white {
-    background-color: darkgray;
-}
 h1 {
-   font-family: sans-serif;
- }
+    font-family: sans-serif;
+}

@@ -1,21 +1,7 @@
-//boof la doof
-
 document.addEventListener("click", mouseClickHandler);
 let selectPiece;
 
 function mouseClickHandler(e) {
-    cleanUp("cell-on-color");
-    for (let element of document.querySelectorAll("#chessboard img")) {
-        if (element.id.includes("-b") || element.id.includes("-w")) {
-            if (e.target === element) {
-                if (element.parentElement.classList.contains("black-space")) {
-                    element.parentElement.classList.add("cell-on-black");
-                } else if (element.parentElement.classList.contains("white-space")) {
-                    element.parentElement.classList.add("cell-on-white");
-                }
-            }
-        }
-    }
     function isPiece() {
         let isPiece = false;
         for (let element of document.querySelectorAll("#chessboard img")) {
@@ -25,6 +11,14 @@ function mouseClickHandler(e) {
     }
 
     if (isPiece()) {
+        cleanUp();
+        for (let element of document.querySelectorAll("#chessboard img")) {
+            if (element.id.includes("-b") || element.id.includes("-w")) {
+                if (e.target === element) {
+                    element.parentElement.classList.add("cell-on")
+                }
+            }
+        }
         selectPiece = e.target;
         let validMoves = calculateMoves(e.target.parentElement);
 
@@ -32,16 +26,13 @@ function mouseClickHandler(e) {
             let cellObject = document.getElementById(parseCellCoords(cellCoords));
             if (cellObject !== null) {
                 cellObject.classList.add("cell-on");
-                if (cellObject.classList.contains("black-space")) {
-                    cellObject.classList.add("cell-on-black");
-                } else if (cellObject.classList.contains("white-space")) {
-                    cellObject.classList.add("cell-on-white");
-                }
             }
         }
     }
     else if (e.target.classList.contains("cell-on")) {
         movePiece(selectPiece, e.target);
+    } else {
+        cleanUp();
     }
 }
 
@@ -436,13 +427,8 @@ function parseCellCoords(cellCoords) {
     return cellID;
 }
 
-function cleanUp(type) {
+function cleanUp() {
     for (let element of document.querySelectorAll("#chessboard td")) {
-        if (type === "cell-on-color") {
-            element.classList.remove("cell-on-white");
-            element.classList.remove("cell-on-black");
-        } else if (type === "cell-on") {
-            element.classList.remove("cell-on");
-        }
+        element.classList.remove("cell-on");
     }
 }
