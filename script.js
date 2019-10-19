@@ -2,10 +2,7 @@ document.addEventListener("click", mouseClickHandler);
 let selectPiece;
 
 function mouseClickHandler(e) {
-    for (let element of document.querySelectorAll("#chessboard td")) {
-        element.classList.remove("cell-on-white");
-        element.classList.remove("cell-on-black");
-    }
+    cleanUp("cell-on-color");
     for (let element of document.querySelectorAll("#chessboard img")) {
         if (element.id.includes("-b") || element.id.includes("-w")) {
             if (e.target === element) {
@@ -42,7 +39,7 @@ function mouseClickHandler(e) {
         }
     }
     else if (e.target.classList.contains("cell-on")) {
-        movePiece(selectPiece, e.target)
+        movePiece(selectPiece, e.target);
     }
 }
 
@@ -403,6 +400,7 @@ function movePiece(piece, toCell) {
     let pieceHTML = piece.parentElement.innerHTML;
     piece.parentElement.innerHTML = "";
     toCell.innerHTML = pieceHTML;
+    cleanUp("cell-on");
 }
 
 function parseCellCoords(cellCoords) {
@@ -434,4 +432,15 @@ function parseCellCoords(cellCoords) {
             break;
     }
     return cellID;
+}
+
+function cleanUp(type) {
+    for (let element of document.querySelectorAll("#chessboard td")) {
+        if (type === "cell-on-color") {
+            element.classList.remove("cell-on-white");
+            element.classList.remove("cell-on-black");
+        } else if (type === "cell-on") {
+            element.classList.remove("cell-on");
+        }
+    }
 }
