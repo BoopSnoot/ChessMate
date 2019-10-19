@@ -349,22 +349,22 @@ function calculateMoves(cellElement) {
     else if (pieceElement.id.includes("pawn")) {
         if (pieceElement.id.includes("-w")) {
             console.log("white pawn");
-            if (cellParsed[1] + 1 < 9) {
+            if (cellParsed[1] + 1 < 9 && cellFree([cellParsed[0], cellParsed[1] + 1])) {
                 moveList = [[cellParsed[0], cellParsed[1] + 1]];
-                if (cellParsed[1] === 2 && cellParsed[1] + 1 < 10) {
+                if (cellParsed[1] === 2 && cellParsed[1] + 1 < 10 && cellFree([cellParsed[0], cellParsed[1] + 2])) {
                     moveList.push([cellParsed[0], cellParsed[1] + 2]);
                 }
             }
         } else {
             console.log("black pawn");
-            if (cellParsed[1] - 1 > 0) {
+            if (cellParsed[1] - 1 > 0 && cellFree([cellParsed[0], cellParsed[1] - 1])) {
                 moveList = [[cellParsed[0], cellParsed[1] - 1]];
-                if (cellParsed[1] === 7 && cellParsed[1] - 1 > 1) {
+                if (cellParsed[1] === 7 && cellParsed[1] - 1 > 1 && cellFree([cellParsed[0], cellParsed[1] - 2])) {
                     moveList.push([cellParsed[0], cellParsed[1] - 2]);
                 }
             }
         }
-    } //TODO: Add collision detection
+    }
     return moveList;
 }
 
