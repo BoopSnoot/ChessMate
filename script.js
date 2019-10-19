@@ -1,3 +1,5 @@
+//boof
+
 document.addEventListener("click", mouseClickHandler);
 let selectPiece;
 
